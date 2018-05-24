@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="320" src="https://github.com/calebman/java-learning/blob/master/head/fish.png">
+  <img width="160" src="https://github.com/calebman/java-learning/blob/master/head/fish.png">
 </p>
 
 <strong  align="center"> 
