@@ -1,7 +1,6 @@
-package com.caleb.cjh.sort;
+package com.caleb.sort;
 
-import com.caleb.cjh.utils.ArrUtil;
-
+import com.caleb.core.utils.ArrUtils;
 /**
  * @author calebman
  * @date 2018-5-17
@@ -14,14 +13,14 @@ import com.caleb.cjh.utils.ArrUtil;
  * 稳定
  * </p>
  */
-public class BubbleSort {
+public class BubbleSort implements SortInterface{
 
     /**
      * 升序排序函数
      *
      * @param arr 数组对象
      */
-    public static void ascSort(int arr[]) {
+    public void ascSort(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {

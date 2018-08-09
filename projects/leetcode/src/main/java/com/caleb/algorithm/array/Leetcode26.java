@@ -1,4 +1,4 @@
-package com.caleb.cjh.array;
+package com.caleb.algorithm.array;
 
 import java.util.ArrayList;
 import java.util.List;

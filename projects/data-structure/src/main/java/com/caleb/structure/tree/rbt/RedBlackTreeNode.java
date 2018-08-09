@@ -1,4 +1,4 @@
-package com.caleb.cjh.tree.rbt;
+package com.caleb.structure.tree.rbt;
 
 /**
  * 红黑树节点结构

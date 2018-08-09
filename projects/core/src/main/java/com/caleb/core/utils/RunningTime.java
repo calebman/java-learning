@@ -34,6 +34,25 @@ public class RunningTime {
         this.endRunTime = endRunTime;
     }
 
+    public long getRunningTime() {
+        this.setEndRunTime(System.currentTimeMillis());
+        return this.getEndRunTime() - this.getStartRunTime();
+    }
+
+    public String getFormatTime() {
+        long mss = getRunningTime();
+        long minutes = (mss % (1000 * 60 * 60)) / (1000 * 60);
+        long seconds = (mss % (1000 * 60)) / 1000;
+        long millSeconds = mss % 1000;
+        if (minutes > 0) {
+            return minutes + "m" + seconds + "s";
+        }
+        if (seconds >= 10) {
+            return seconds + "," + millSeconds;
+        }
+        return millSeconds + "ms";
+    }
+
     /*
      创建一个计时对象
      */

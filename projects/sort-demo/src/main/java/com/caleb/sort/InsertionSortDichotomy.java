@@ -1,4 +1,4 @@
-package com.caleb.cjh.sort;
+package com.caleb.sort;
 
 /**
  * @author calebman
@@ -12,14 +12,14 @@ package com.caleb.cjh.sort;
  * 稳定
  * </p>
  */
-public class InsertionSortDichotomy {
+public class InsertionSortDichotomy implements SortInterface{
 
     /**
      * 升序排序函数
      *
      * @param arr 数组对象
      */
-    public static void ascSort(int arr[]) {
+    public void ascSort(int arr[]) {
         for (int i = 1; i < arr.length; i++) {
             int get = arr[i];                    // 右手抓到一张扑克牌
             int left = 0;                    // 拿在左手上的牌总是排序好的，所以可以用二分法

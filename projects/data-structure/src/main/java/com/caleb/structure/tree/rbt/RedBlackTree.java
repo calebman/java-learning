@@ -1,8 +1,9 @@
-package com.caleb.cjh.tree.rbt;
+package com.caleb.structure.tree.rbt;
 
-import com.caleb.cjh.tree.rbt.RedBlackTreeNode;
 
-public class RedBlackTree {
+import com.caleb.structure.tree.BinarySearchTreeInterface;
+
+public class RedBlackTree implements BinarySearchTreeInterface {
 
     private RedBlackTreeNode root;    // 根结点
     private static final boolean RED = false;

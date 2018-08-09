@@ -1,6 +1,6 @@
-package com.caleb.cjh.tree.btn;
+package com.caleb.structure.tree.bst;
 
-import com.caleb.cjh.tree.btn.BinaryTreeNode;
+import com.caleb.structure.tree.BinarySearchTreeInterface;
 
 /**
  * @author calebman
@@ -9,7 +9,7 @@ import com.caleb.cjh.tree.btn.BinaryTreeNode;
  * 实现一个二叉查找树
  * </p>
  */
-public class BinarySearchTree {
+public class BinarySearchTree implements BinarySearchTreeInterface {
 
     // 根节点
     private BinaryTreeNode root;
@@ -118,6 +118,7 @@ public class BinarySearchTree {
      *
      * @param num 索引值
      */
+
     public void insert(int num) {
         BinaryTreeNode insertNode = new BinaryTreeNode(num, null, null, null);
 

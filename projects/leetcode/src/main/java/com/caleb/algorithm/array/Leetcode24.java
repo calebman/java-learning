@@ -1,9 +1,6 @@
-package com.caleb.cjh.array;
+package com.caleb.algorithm.array;
 
 import org.junit.Assert;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * 给定一个整数数组，判断是否存在重复元素。

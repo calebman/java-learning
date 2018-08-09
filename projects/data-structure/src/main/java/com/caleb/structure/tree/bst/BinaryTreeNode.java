@@ -1,4 +1,4 @@
-package com.caleb.cjh.tree.btn;
+package com.caleb.structure.tree.bst;
 
 /**
  * 二叉树节点数据结构

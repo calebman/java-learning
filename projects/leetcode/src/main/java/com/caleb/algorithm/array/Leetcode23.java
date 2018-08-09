@@ -1,6 +1,6 @@
-package com.caleb.cjh.array;
+package com.caleb.algorithm.array;
 
-import com.caleb.core.utils.ArrUtil;
+import com.caleb.core.utils.ArrUtils;
 
 /**
  * 旋转数组
@@ -69,6 +69,6 @@ public class Leetcode23 {
         int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
         int k = 8;
         rotate(nums, k);
-        ArrUtil.printArr(nums);
+        ArrUtils.printArr(nums);
     }
 }

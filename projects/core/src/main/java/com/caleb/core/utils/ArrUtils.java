@@ -9,7 +9,7 @@ import java.util.Random;
  * 数组工具类
  * </p>
  */
-public class ArrUtil {
+public class ArrUtils {
     /**
      * 打印数组
      *
@@ -71,6 +71,21 @@ public class ArrUtil {
             randCount++;
             arr[position] = arr[r - 1];
         } while (randCount < n);
+        return arr;
+    }
+
+    /**
+     * 生成一个大小为n的有序数组
+     *
+     * @param n 数组大小
+     * @return 数组对象
+     */
+    public static int[] generatorRepeatArr(int n) {
+        int arr[] = new int[n];
+        // 顺序生成
+        for (int i = 0; i < n; i++) {
+            arr[i] = i;
+        }
         return arr;
     }
 

@@ -10,8 +10,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>core</groupId>
-            <artifactId>com.caleb.core</artifactId>
+            <groupId>com.caleb.core</groupId>
+            <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

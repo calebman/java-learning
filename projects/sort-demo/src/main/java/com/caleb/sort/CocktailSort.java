@@ -1,7 +1,6 @@
-package com.caleb.cjh.sort;
+package com.caleb.sort;
 
-import com.caleb.cjh.utils.ArrUtil;
-
+import com.caleb.core.utils.ArrUtils;
 /**
  * @author calebman
  * @date 2018-5-17
@@ -14,14 +13,14 @@ import com.caleb.cjh.utils.ArrUtil;
  * 稳定
  * </p>
  */
-public class CocktailSort {
+public class CocktailSort implements SortInterface{
 
     /**
      * 升序排序函数
      *
      * @param arr 数组对象
      */
-    public static void ascSort(int arr[]) {
+    public void ascSort(int arr[]) {
         // 初始化边界
         int left = 0;
         int right = arr.length - 1;
@@ -29,14 +28,14 @@ public class CocktailSort {
             for (int i = left; i < right; i++)   // 前半轮,将最大元素放到后面
             {
                 if (arr[i] > arr[i + 1]) {
-                    ArrUtil.swap(arr, i, i + 1);
+                    ArrUtils.swap(arr, i, i + 1);
                 }
             }
             right--;
             for (int i = right; i > left; i--)   // 后半轮,将最小元素放到前面
             {
                 if (arr[i - 1] > arr[i]) {
-                    ArrUtil.swap(arr, i - 1, i);
+                    ArrUtils.swap(arr, i - 1, i);
                 }
             }
             left++;
