@@ -1,15 +1,15 @@
 package com.caleb.cjh;
 
 import com.caleb.cjh.sort.*;
-import com.caleb.cjh.utils.ArrUtil;
-import com.caleb.cjh.utils.RunTime;
+import com.caleb.core.utils.ArrUtil;
+import com.caleb.core.utils.RunningTime;
 import org.junit.Test;
 
 public class SortTest {
 
-    static final int ARR_SIZE = 200 * 1000;
+    static final int ARR_SIZE = 10 * 1000;
 
-    static final int SRC_ARR[] = ArrUtil.generatorArr(ARR_SIZE, 1, 10000);
+    static final int SRC_ARR[] = ArrUtil.generatorRandomArr(ARR_SIZE, 1, 10000);
 
     static {
         System.out.println("Sorting an array of size " + ARR_SIZE);
@@ -18,40 +18,40 @@ public class SortTest {
     @Test
     public void bubbleSortTest() {
         int arr[] = ArrUtil.cloneArr(SRC_ARR);
-        RunTime runTime = RunTime.generatorRunTimeAndstart();
+        RunningTime running = RunningTime.generator();
         BubbleSort.ascSort(arr);
-        runTime.printRunningTime("use BubbleSort takes ");
+        running.printInfo("use BubbleSort");
     }
 
     @Test
     public void cocktailSortTest() {
         int arr[] = ArrUtil.cloneArr(SRC_ARR);
-        RunTime runTime = RunTime.generatorRunTimeAndstart();
+        RunningTime running = RunningTime.generator();
         CocktailSort.ascSort(arr);
-        runTime.printRunningTime("use CocktailSort takes ");
+        running.printInfo("use CocktailSort");
     }
 
     @Test
     public void selectionSortTest() {
         int arr[] = ArrUtil.cloneArr(SRC_ARR);
-        RunTime runTime = RunTime.generatorRunTimeAndstart();
+        RunningTime running = RunningTime.generator();
         SelectionSort.ascSort(arr);
-        runTime.printRunningTime("use SelectionSort takes ");
+        running.printInfo("use SelectionSort");
     }
 
     @Test
     public void insertionSortTest() {
         int arr[] = ArrUtil.cloneArr(SRC_ARR);
-        RunTime runTime = RunTime.generatorRunTimeAndstart();
+        RunningTime running = RunningTime.generator();
         InsertionSort.ascSort(arr);
-        runTime.printRunningTime("use InsertionSort takes ");
+        running.printInfo("use InsertionSort");
     }
 
     @Test
     public void insertionSortDichotomyTest() {
         int arr[] = ArrUtil.cloneArr(SRC_ARR);
-        RunTime runTime = RunTime.generatorRunTimeAndstart();
+        RunningTime running = RunningTime.generator();
         InsertionSortDichotomy.ascSort(arr);
-        runTime.printRunningTime("use InsertionSortDichotomy takes ");
+        running.printInfo("use InsertionSortDichotomy");
     }
 }

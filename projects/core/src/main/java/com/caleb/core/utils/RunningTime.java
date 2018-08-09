@@ -1,4 +1,4 @@
-package com.caleb.cjh.utils;
+package com.caleb.core.utils;
 
 /**
  * @author calebman
@@ -7,7 +7,7 @@ package com.caleb.cjh.utils;
  * 计时工具类
  * </p>
  */
-public class RunTime {
+public class RunningTime {
 
     /*
     计时开启时间
@@ -35,24 +35,24 @@ public class RunTime {
     }
 
     /*
-    创建一个计时对象
+     创建一个计时对象
      */
-    public static RunTime generatorRunTimeAndstart() {
-        RunTime runTime = new RunTime();
-        runTime.setStartRunTime(System.currentTimeMillis());
-        return runTime;
+    public static RunningTime generator() {
+        RunningTime running = new RunningTime();
+        running.setStartRunTime(System.currentTimeMillis());
+        return running;
     }
 
     /*
     重新计时
      */
-    public void reTiming() {
+    public void reComplete() {
         this.setStartRunTime(System.currentTimeMillis());
     }
 
 
-    public void printRunningTime() {
-        this.printRunningTime("");
+    public void printInfo() {
+        this.printInfo("");
     }
 
     /**
@@ -60,8 +60,8 @@ public class RunTime {
      *
      * @param flag 需要额外添加的标志内容
      */
-    public void printRunningTime(String flag) {
+    public void printInfo(String flag) {
         this.setEndRunTime(System.currentTimeMillis());
-        System.out.println(flag + (this.getEndRunTime() - this.getStartRunTime()) + "ms");
+        System.out.println(flag + " running " + (this.getEndRunTime() - this.getStartRunTime()) + "ms");
     }
 }

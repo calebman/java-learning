@@ -4,17 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.caleb.cjh</groupId>
-    <artifactId>sort-demo</artifactId>
+    <groupId>com.caleb.core</groupId>
+    <artifactId>core</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId>core</groupId>
-            <artifactId>com.caleb.core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
-
-
 </project>
