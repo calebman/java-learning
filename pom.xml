@@ -6,6 +6,7 @@
 
     <groupId>com.caleb.cjh</groupId>
     <artifactId>caleb</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
@@ -14,5 +15,6 @@
         <module>./leetcode</module>
         <module>./sort-demo</module>
         <module>./jvm-gc-demo</module>
+        <module>cache-demo</module>
     </modules>
 </project>

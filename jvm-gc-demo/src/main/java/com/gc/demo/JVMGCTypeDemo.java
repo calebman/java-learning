@@ -7,51 +7,28 @@ import java.util.Scanner;
 /**
  * @author JianhuiChen
  * @version 1.1
- * @description JVM 垃圾回收示例
+ * @description JVM 垃圾回收器类型示例
  * @date 2020-07-06
  */
-public class JVMMSDemo {
+public class JVMGCTypeDemo {
     public static void main(String[] args) {
         JVMUtils.printJVMInfo();
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("请输入平均流量，支持 b、k、m、g 作为单位");
-        final long singleSize = JVMUtils.parseBitSize(scan.next());
-        System.out.println("请输入总流量，支持 b、k、m、g 作为单位");
-        final long bitSize = JVMUtils.parseBitSize(scan.next());
-        final int allotCnt = (int) Math.ceil(bitSize / (double) singleSize);
+        final long cacheTotal = (long) (Runtime.getRuntime().maxMemory() * 0.9);
 
-        long startAt = System.currentTimeMillis();
+        final long singleSize = JVMUtils.parseBitSize("512b");
+        final long bitTotal = JVMUtils.parseBitSize("10g");
 
-        List<byte[]> cache = new ArrayList<>();
-        // 涌入订单
-        for (int i = 0; i < allotCnt; i++) {
-            try {
-                cache.add(new byte[(int) singleSize]);
-                i++;
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        final int cacheAllotCnt = (int) Math.ceil(cacheTotal / (double) singleSize);
+        final int bitAllotCnt = (int) Math.ceil(bitTotal / (double) singleSize);
+        byte[][] mermory = new byte[cacheAllotCnt][];
+        for (long i = 0; i < bitAllotCnt; i++) {
+            if (i == cacheAllotCnt) {
+                mermory = new byte[cacheAllotCnt][];
             }
+            mermory[Math.toIntExact(i % cacheAllotCnt)] = new byte[(int) singleSize];
         }
 
-        // 处理订单
-        new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(3);
-                    if (cache.isEmpty()) {
-                        break;
-                    }
-                    cache.remove(0);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-
         JVMUtils.printJVMGCInfo();
-
-        System.out.println(String.format("运行耗时 %dms", System.currentTimeMillis() - startAt));
     }
 }
